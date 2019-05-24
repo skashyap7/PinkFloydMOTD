@@ -33,12 +33,3 @@ def get_random_qoute(qoutes):
 message = get_random_qoute(qoutes)
 full_message = PINK_FLOYD_ART + "\n" + message
 print(full_message)
-exit(0)
-# check if running with sudo access
-if  os.geteuid() == 0:
-	# overwrite message to motd
-	with open("/etc/motd","w") as fh:
-		fh.write(full_message)
-	exit("Login with new window to see motd")
-else:
-	exit("Could not change the motd")	
